@@ -36,9 +36,9 @@ include $(call all-makefiles-under, $(LOCAL_PATH))
 
 # Use the following include to make camera test apk.
 include $(call all-makefiles-under, ../LegacyCamera)
-endif #gallery and camera test apk
+endif
 
-else #BOARD_USES_LEGACY_CAMERA
+else
 
 LOCAL_PATH:= $(call my-dir)
 
@@ -54,7 +54,6 @@ LOCAL_STATIC_JAVA_LIBRARIES += mp4parser
 LOCAL_SRC_FILES := $(call all-java-files-under, src) $(call all-renderscript-files-under, src)
 LOCAL_SRC_FILES += $(call all-java-files-under, src_pd)
 LOCAL_SRC_FILES += $(call all-java-files-under, ../Camera/src)
-LOCAL_SRC_FILES += $(call all-renderscript-files-under, ../Camera/src)
 
 LOCAL_RESOURCE_DIR += $(LOCAL_PATH)/res 
 LOCAL_RESOURCE_DIR += packages/apps/Camera/res
@@ -87,6 +86,6 @@ include $(call all-makefiles-under, $(LOCAL_PATH))
 
 # Use the following include to make camera test apk.
 include $(call all-makefiles-under, ../Camera)
-endif #gallery and camera test apk
+endif
 
-endif #BOARD_USES_LEGACY_CAMERA
+endif
